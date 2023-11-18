@@ -47,7 +47,7 @@ interface Outputs {
 const newGitHubClient = (token: string): http.HttpClient => {
   return new http.HttpClient("shogo82148-actions-upload-release-asset/v1", [], {
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `token ${token}`,
       Accept: "application/vnd.github+json",
       "X-GitHub-Api-Version": "2022-11-28",
     },
