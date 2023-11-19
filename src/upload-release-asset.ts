@@ -70,6 +70,7 @@ const uploadReleaseAsset = async (
     u.searchParams.append("label", params.label);
   }
   const resp = await client.request("POST", u.toString(), params.data, params.headers);
+  core.debug(JSON.stringify(resp));
   const statusCode = resp.message.statusCode;
   const contents = await resp.readBody();
   if (statusCode !== 201) {
